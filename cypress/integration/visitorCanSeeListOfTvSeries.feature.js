@@ -9,7 +9,8 @@ describe("visitor can see list of tv series", () => {
     cy.visit("/")
   });
   it("visitor can see header", () => {
-    cy.get("[data-cy=header]").should("contain", "#logo")
+    cy.get("[data-cy=header]").should("exist")
+    cy.get("[data-cy=footer]").should("exist")
   })
   it("visitor can see first tv show", () => {
     cy.get(".container").within(() => {

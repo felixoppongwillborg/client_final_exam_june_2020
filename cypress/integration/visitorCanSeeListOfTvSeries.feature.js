@@ -8,7 +8,12 @@ describe("visitor can see list of tv series", () => {
     })
     cy.visit("/")
   });
+  it("visitor can see header", () => {
+    cy.get("[data-cy=header]").should("contain", "#logo")
+  })
   it("visitor can see first tv show", () => {
-    cy.get("[data-cy=image]").should("be_visible")
+    cy.get(".container").within(() => {
+      cy.get("[data-cy=image]").should("exist");
+    })
   })
 })

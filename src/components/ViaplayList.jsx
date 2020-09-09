@@ -9,6 +9,7 @@ const ViaplayList = () => {
   }, []);
 
   const getTvSeries = async () => {
+    debugger
     let response = await axios.get(
       "https://content.viaplay.se/pc-se/serier/samtliga"
     );
@@ -20,9 +21,9 @@ const ViaplayList = () => {
   };
 
   let content = tvSeries.map((series) => (
-    <img src={`${series.content.images.landscape.url}`} alt=""></img>
+    <img className="display-show" data-cy="image" src={`${series.content.images.landscape.url}`} alt=""></img>
   ));
-  return <div data-cy="image">{content}</div>;
+  return <div className="container">{content}</div>;
 };
 
 export default ViaplayList;
